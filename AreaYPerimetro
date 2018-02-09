@@ -1,0 +1,80 @@
+import scala.math._
+
+object AreaYPerimetro {
+  def main(args: Array[String]): Unit = {
+    mostrarMenu()
+    
+    val opcion = readByte
+    if (opcion.==(1)) {
+      mostrarMenu2()
+      
+      var opcion2 = readByte
+      if (opcion2.==(1)) {
+        println("Ingresa el radio del circulo")
+        println(obtenerAreaCirculo(readDouble()))
+      } else if(opcion2.==(2)) {
+        println("Ingresa el radio del circulo")
+        println(obtenerPerimetroCirculo(readDouble()))
+      }
+    } else if (opcion.==(2)) {
+      mostrarMenu2()
+      
+      var opcion2 = readByte
+      if (opcion2.==(1)) {
+        println("Ingresa la base y la altura del triangulo separados por un enter")
+        println(obtenerAreaTriangulo(readDouble(), readDouble()))
+      } else if(opcion2.==(2)) {
+        println("Ingresa los lados del triangulo separados por un enter")
+        println(obtenerPerimetroTriangulo(readDouble(), readDouble(), readDouble()))
+      }
+    } else if (opcion.==(3)) {
+      mostrarMenu2()
+      
+      var opcion2 = readByte
+      if (opcion2.==(1)) {
+        println("Ingresa los lados del rectangulo separados por un enter")
+        println(obtenerAreaRectangulo(readDouble(), readDouble()))
+      } else if(opcion2.==(2)) {
+        println("Ingresa los lados del rectangulo separados por un enter")
+        println(obtenerPerimetroRectangulo(readDouble(), readDouble()))
+      }
+    }
+  }
+  
+  def mostrarMenu(): Unit = {
+    println("1)Circulo")
+    println("2)Trinagulo")
+    println("3)Rectangulo")
+    println("Ingresa una opción")
+  }
+  
+  def mostrarMenu2(): Unit = {
+    println("1)Area")
+    println("2)Perimetro")
+    println("Ingresa una opción")
+  }
+  
+  def obtenerAreaCirculo(radio: Double): Double = {
+    Pi*pow(radio, 2)
+  }
+  
+  def obtenerPerimetroCirculo(radio: Double): Double = {
+    2*Pi*radio
+  }
+  
+  def obtenerAreaTriangulo(base: Double, altura: Double): Double = {
+    (base*altura)/2
+  }
+  
+  def obtenerPerimetroTriangulo(a: Double, b: Double, c:Double): Double = {
+    a+b+c
+  }
+  
+  def obtenerAreaRectangulo(a: Double, b: Double): Double = {
+    a*b
+  }
+  
+  def obtenerPerimetroRectangulo(a: Double, b: Double): Double = {
+    2*(a+b)
+  }
+}
