@@ -1,0 +1,21 @@
+
+
+object TiendaPantalones {
+  def main(args: Array[String]): Unit = {
+    println("Ingrese la cantidad de pantalones que desea comprar: ")
+    println("Total a pagar: " + obtenerPrecioPantalones(readInt))
+  }
+  
+  def obtenerPrecioPantalones(cantidad: Int): Double = {
+    val precio = 356.82
+    var precioTotal = 0.0
+    if (cantidad<5)
+      precioTotal = cantidad * precio
+    else if (cantidad>=5 && cantidad<12)
+      precioTotal = (precio * .85) * cantidad 
+    else if (cantidad>=12)
+      precioTotal = ( precio * .70) * cantidad 
+      
+    precioTotal
+  }
+}
