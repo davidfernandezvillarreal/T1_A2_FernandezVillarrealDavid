@@ -1,0 +1,47 @@
+
+
+object SolicitantePrestamo {
+  def main(args: Array[String]): Unit = {
+    println("Ingresa el nombre")
+    val nombre = readLine
+    println("Ingresa el historial crediticio: 'b' bueno o 'm' mala")
+    val historiaCredito = readChar()
+    println("Ingresa la cantidad pedida")
+    val cantidadPedida = readDouble
+    println("Ingresa el salario anual")
+    val salarioAnual = readDouble
+    println("Ingresa el valor de otras propiedades")
+    val valorOtrasPropiedades = readDouble
+    
+    val puntos = obtenerDatosSolicitante(nombre, historiaCredito, cantidadPedida, salarioAnual, valorOtrasPropiedades)
+    if (puntos>6)
+      println("Puntos: " + puntos + "\nPrestamo aceptado")
+    else 
+      println("Puntos: " + puntos + "\nPrestamo rechazado")
+      
+  }
+  
+  def obtenerDatosSolicitante(nombre: String, historiaCredito: Char, cantidadPedida: Double, 
+      salarioAnual: Double, valorOtrasPropiedades: Double): Int = {
+    var puntos = 0
+    
+    if (historiaCredito.toString().equals("b")) {
+      if (salarioAnual>=(cantidadPedida/2)) 
+        puntos = 5
+      else if (salarioAnual>=(cantidadPedida/4) && salarioAnual<=(cantidadPedida/2))
+        puntos = 3
+      else if (salarioAnual>=(cantidadPedida/10) && salarioAnual<=(cantidadPedida/4))
+        puntos = 1
+      
+     if (valorOtrasPropiedades>=(cantidadPedida*2))
+       puntos = puntos + 5
+     else if (valorOtrasPropiedades>=cantidadPedida && valorOtrasPropiedades<=(cantidadPedida*2))
+       puntos = puntos + 3
+    } else {
+      println("Solicitante no conciderado por estado de crédito malo")
+    }
+      
+    
+    puntos
+  }
+}
