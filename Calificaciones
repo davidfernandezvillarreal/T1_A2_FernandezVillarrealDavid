@@ -1,0 +1,32 @@
+
+
+object Calificaciones {
+  def main(args: Array[String]): Unit = {
+    val promedio = obtenerSuma(5)/5
+    println("Promedio: " + promedio)
+    mostrarMensaje(promedio.toByte)
+  }
+  
+  def obtenerSuma(x: Int): Int = {
+    var suma = 0
+    
+    if (x!=0) {
+      println("Ingersa la calificación " + x)
+      var calif = readByte
+      suma = obtenerSuma(x-1) + calif
+    }
+    
+    suma  
+  }
+  
+  def mostrarMensaje(promedio: Byte): Unit = {
+    if (promedio <= 100 && promedio >= 90 ) 
+      println("Exelente" )
+    else if (promedio <= 89  && promedio >= 80 )
+      println("Bien" )
+    else if (promedio <= 79  && promedio >= 70 )
+      println("Regular" )
+    else if (promedio <= 69 )
+      println("Terrible" )
+  }
+}
