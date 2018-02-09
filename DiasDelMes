@@ -1,0 +1,17 @@
+
+
+object DiasDelMes {
+  def main(args: Array[String]): Unit = {
+    println("Ingrese el numero del mes para obtener sus dias")
+    val mes = readLine
+    
+    if (mes.equals("2"))
+      println("El mes 2 tiene 28 dias")
+    else if (mes.equals("4") || mes.equals("6") || mes.equals("9") || mes.equals("11"))
+      println("El mes " + mes + " tienen 30 dias")
+    else if (mes.equals("1") || mes.equals("3") || mes.equals("5") || mes.equals("7") 
+        || mes.equals("8") || mes.equals("10") || mes.equals("12"))
+      println("El mes " + mes + " tienen 31 dias") 
+  }
+   
+}
