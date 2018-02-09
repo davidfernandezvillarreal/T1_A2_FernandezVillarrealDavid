@@ -1,0 +1,15 @@
+
+
+object AñoBisiesto {
+  def main(args: Array[String]): Unit = {
+    println("Ingresa un año")
+    obtenerAñoBisiesto(readLine())
+  }
+  
+  def obtenerAñoBisiesto(año: String): Unit = {
+    if (año.toInt.%(4).==(0) && año.toInt%100!=0)
+      println("Si")
+    else
+      println("No")
+  }
+}
